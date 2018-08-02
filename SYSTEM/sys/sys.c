@@ -1,46 +1,46 @@
 #include "sys.h"
 
 //////////////////////////////////////////////////////////////////////////////////	 
-//±¾³ÌÐòÖ»¹©Ñ§Ï°Ê¹ÓÃ£¬Î´¾­×÷ÕßÐí¿É£¬²»µÃÓÃÓÚÆäËüÈÎºÎÓÃÍ¾
-//ALIENTEK Mini STM32¿ª·¢°å
-//ÏµÍ³ÖÐ¶Ï·Ö×éÉèÖÃ»¯		   
-//ÕýµãÔ­×Ó@ALIENTEK
-//¼¼ÊõÂÛÌ³:www.openedv.com
-//ÐÞ¸ÄÈÕÆÚ:2012/9/10
-//°æ±¾£ºV1.4
-//°æÈ¨ËùÓÐ£¬µÁ°æ±Ø¾¿¡£
-//Copyright(C) ÕýµãÔ­×Ó 2009-2019
+//æœ¬ç¨‹åºåªä¾›å­¦ä¹ ä½¿ç”¨ï¼Œæœªç»ä½œè€…è®¸å¯ï¼Œä¸å¾—ç”¨äºŽå…¶å®ƒä»»ä½•ç”¨é€”
+//ALIENTEK Mini STM32å¼€å‘æ¿
+//ç³»ç»Ÿä¸­æ–­åˆ†ç»„è®¾ç½®åŒ–		   
+//æ­£ç‚¹åŽŸå­@ALIENTEK
+//æŠ€æœ¯è®ºå›:www.openedv.com
+//ä¿®æ”¹æ—¥æœŸ:2012/9/10
+//ç‰ˆæœ¬ï¼šV1.4
+//ç‰ˆæƒæ‰€æœ‰ï¼Œç›—ç‰ˆå¿…ç©¶ã€‚
+//Copyright(C) æ­£ç‚¹åŽŸå­ 2009-2019
 //All rights reserved
 //********************************************************************************  
 void NVIC_Configuration(void)
 {
 
-    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);	//ÉèÖÃNVICÖÐ¶Ï·Ö×é2:2Î»ÇÀÕ¼ÓÅÏÈ¼¶£¬2Î»ÏìÓ¦ÓÅÏÈ¼¶
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);	//è®¾ç½®NVICä¸­æ–­åˆ†ç»„2:2ä½æŠ¢å ä¼˜å…ˆçº§ï¼Œ2ä½å“åº”ä¼˜å…ˆçº§
 
 }
 void MY_NVIC_SetVectorTable(u32 NVIC_VectTab, u32 Offset)	 
 { 
-  	//¼ì²é²ÎÊýºÏ·¨ÐÔ
+  	//æ£€æŸ¥å‚æ•°åˆæ³•æ€§
 	assert_param(IS_NVIC_VECTTAB(NVIC_VectTab));
 	assert_param(IS_NVIC_OFFSET(Offset));  	 
-	SCB->VTOR = NVIC_VectTab|(Offset & (u32)0x1FFFFF80);//ÉèÖÃNVICµÄÏòÁ¿±íÆ«ÒÆ¼Ä´æÆ÷
-	//ÓÃÓÚ±êÊ¶ÏòÁ¿±íÊÇÔÚCODEÇø»¹ÊÇÔÚRAMÇø
+	SCB->VTOR = NVIC_VectTab|(Offset & (u32)0x1FFFFF80);//è®¾ç½®NVICçš„å‘é‡è¡¨åç§»å¯„å­˜å™¨
+	//ç”¨äºŽæ ‡è¯†å‘é‡è¡¨æ˜¯åœ¨CODEåŒºè¿˜æ˜¯åœ¨RAMåŒº
 }
 void MYRCC_DeInit(void)
 {										  					   
-	RCC->APB1RSTR = 0x00000000;//¸´Î»½áÊø			 
+	RCC->APB1RSTR = 0x00000000;//å¤ä½ç»“æŸ			 
 	RCC->APB2RSTR = 0x00000000; 
 	  
-  	RCC->AHBENR = 0x00000014;  //Ë¯ÃßÄ£Ê½ÉÁ´æºÍSRAMÊ±ÖÓÊ¹ÄÜ.ÆäËû¹Ø±Õ.	  
-  	RCC->APB2ENR = 0x00000000; //ÍâÉèÊ±ÖÓ¹Ø±Õ.			   
+  	RCC->AHBENR = 0x00000014;  //ç¡çœ æ¨¡å¼é—ªå­˜å’ŒSRAMæ—¶é’Ÿä½¿èƒ½.å…¶ä»–å…³é—­.	  
+  	RCC->APB2ENR = 0x00000000; //å¤–è®¾æ—¶é’Ÿå…³é—­.			   
   	RCC->APB1ENR = 0x00000000;   
-	RCC->CR |= 0x00000001;     //Ê¹ÄÜÄÚ²¿¸ßËÙÊ±ÖÓHSION	 															 
-	RCC->CFGR &= 0xF8FF0000;   //¸´Î»SW[1:0],HPRE[3:0],PPRE1[2:0],PPRE2[2:0],ADCPRE[1:0],MCO[2:0]					 
-	RCC->CR &= 0xFEF6FFFF;     //¸´Î»HSEON,CSSON,PLLON
-	RCC->CR &= 0xFFFBFFFF;     //¸´Î»HSEBYP	   	  
-	RCC->CFGR &= 0xFF80FFFF;   //¸´Î»PLLSRC, PLLXTPRE, PLLMUL[3:0] and USBPRE 
-	RCC->CIR = 0x00000000;     //¹Ø±ÕËùÓÐÖÐ¶Ï
-	//ÅäÖÃÏòÁ¿±í				  
+	RCC->CR |= 0x00000001;     //ä½¿èƒ½å†…éƒ¨é«˜é€Ÿæ—¶é’ŸHSION	 															 
+	RCC->CFGR &= 0xF8FF0000;   //å¤ä½SW[1:0],HPRE[3:0],PPRE1[2:0],PPRE2[2:0],ADCPRE[1:0],MCO[2:0]					 
+	RCC->CR &= 0xFEF6FFFF;     //å¤ä½HSEON,CSSON,PLLON
+	RCC->CR &= 0xFFFBFFFF;     //å¤ä½HSEBYP	   	  
+	RCC->CFGR &= 0xFF80FFFF;   //å¤ä½PLLSRC, PLLXTPRE, PLLMUL[3:0] and USBPRE 
+	RCC->CIR = 0x00000000;     //å…³é—­æ‰€æœ‰ä¸­æ–­
+	//é…ç½®å‘é‡è¡¨				  
 #ifdef  VECT_TAB_RAM
 	MY_NVIC_SetVectorTable(NVIC_VectTab_RAM, 0x0);
 #else   
@@ -50,19 +50,19 @@ void MYRCC_DeInit(void)
 void Stm32_Clock_Init(u8 PLL)
 {
 	unsigned char temp=0;   
-	MYRCC_DeInit();		  //¸´Î»²¢ÅäÖÃÏòÁ¿±í
-	RCC->CR|=0x00010000;  //Íâ²¿¸ßËÙÊ±ÖÓÊ¹ÄÜHSEON
-	while(!(RCC->CR>>17));//µÈ´ýÍâ²¿Ê±ÖÓ¾ÍÐ÷
+	MYRCC_DeInit();		  //å¤ä½å¹¶é…ç½®å‘é‡è¡¨
+	RCC->CR|=0x00010000;  //å¤–éƒ¨é«˜é€Ÿæ—¶é’Ÿä½¿èƒ½HSEON
+	while(!(RCC->CR>>17));//ç­‰å¾…å¤–éƒ¨æ—¶é’Ÿå°±ç»ª
 	RCC->CFGR=0X00000400; //APB1=DIV2;APB2=DIV1;AHB=DIV1;
-	PLL-=2;//µÖÏû2¸öµ¥Î»
-	RCC->CFGR|=PLL<<18;   //ÉèÖÃPLLÖµ 2~16
+	PLL-=2;//æŠµæ¶ˆ2ä¸ªå•ä½
+	RCC->CFGR|=PLL<<18;   //è®¾ç½®PLLå€¼ 2~16
 	RCC->CFGR|=1<<16;	  //PLLSRC ON 
-	FLASH->ACR|=0x32;	  //FLASH 2¸öÑÓÊ±ÖÜÆÚ
+	FLASH->ACR|=0x32;	  //FLASH 2ä¸ªå»¶æ—¶å‘¨æœŸ
 
 	RCC->CR|=0x01000000;  //PLLON
-	while(!(RCC->CR>>25));//µÈ´ýPLLËø¶¨
-	RCC->CFGR|=0x00000002;//PLL×÷ÎªÏµÍ³Ê±ÖÓ	 
-	while(temp!=0x02)     //µÈ´ýPLL×÷ÎªÏµÍ³Ê±ÖÓÉèÖÃ³É¹¦
+	while(!(RCC->CR>>25));//ç­‰å¾…PLLé”å®š
+	RCC->CFGR|=0x00000002;//PLLä½œä¸ºç³»ç»Ÿæ—¶é’Ÿ	 
+	while(temp!=0x02)     //ç­‰å¾…PLLä½œä¸ºç³»ç»Ÿæ—¶é’Ÿè®¾ç½®æˆåŠŸ
 	{   
 		temp=RCC->CFGR>>2;
 		temp&=0x03;

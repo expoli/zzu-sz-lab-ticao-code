@@ -30,7 +30,7 @@ int main(void)
 		stand();
 		delay_ms(1000);
 		
-		left_turn();//完成
+		/*left_turn();//完成
 		left_turn();//完成
 		//left_turn();//完成
 
@@ -46,11 +46,12 @@ int main(void)
 		right_turn();
 		stand_on_head();	
 
-		//zibian();
-		zibian1();
-		zibian3();
-		bow();
-		wave();
+		//zibian();*/
+		//zibian1();
+		//zibian3();
+		zibian0();
+		//bow();
+		//wave();
 		delay_ms(5000);
 		stand();
 		delay_ms(5000);

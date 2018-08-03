@@ -601,7 +601,7 @@ void left_turn()
 
 	//侧着站
  	Action_write(5,487,300);
-  	Action_write(6,281,300);
+  Action_write(6,281,300);
 	Action_write(7,509,400);
 	Action_write(8,859,300);
 	Action_write(9,359,300);
@@ -927,11 +927,11 @@ void zibian1()
 	Action();
 
 	//后仰
-	Action_write(2, 599, 300);
+	Action_write(2, 639, 300);
 	Action();
 	delay_ms(1000);
 	//第一次手平
-	Action_write(1, 606, 300);
+	Action_write(1, 638, 300);
 	Action_write(3, 561, 300);
 	Action_write(4, 555, 300);
 	Action_write(5, 491, 300);
@@ -956,13 +956,15 @@ void zibian1()
 	Action_write(6, 231, 500);
 	Action();
 	delay_ms(1000);
-	//手调平
-	Action_write(7, 617, 100);
-	Action_write(8, 922, 100);
+	//侧身
+	Action_write(7, 620, 100);
+	Action_write(8, 921, 100);
+	Action_write(9, 284, 150);
+	Action_write(10, 594, 100);
 	Action();
 	delay_ms(900);
 	//上腿，抬9
-	Action_write(9, 841, 80);
+	Action_write(9, 841, 110);
 	Action_write(10, 618, 100);
 	Action();		
 	delay_ms(1000);
@@ -1108,8 +1110,8 @@ void zibian2()
 void zibian3()
 {
 	//1.预备2，在这里机器趴下
-	Action_write(1, 180, 600);
-	Action_write(2, 236, 500);
+	Action_write(1, 190, 500);
+	Action_write(2, 236, 400);
 	Action_write(3, 414, 300);
 	Action_write(4, 538, 300);
 	Action_write(5, 641, 300);
@@ -1210,7 +1212,7 @@ void zibian3()
 	Action();
 	delay_ms(1000);
 	delay_ms(1000);
-	//手弯折 手臂着地
+/*	//手弯折 手臂着地
 	Action_write(3, 846, 200);
 	Action_write(4, 284, 200);
 	Action_write(5, 202, 200);
@@ -1221,15 +1223,24 @@ void zibian3()
 	Action_write(10, 503, 200);
 	Action();
 	delay_ms(1000);
-	delay_ms(1000);
+	delay_ms(1000);*/
 	//7.倒立
 	Action_write(2, 488, 400);
-	Action_write(3, 547, 200);
-	Action_write(4, 741, 200);
-	Action_write(5, 517, 200);
-	Action_write(6, 307, 200);
+	Action_write(3, 795, 200);
+	Action_write(4, 529, 200);
+	Action_write(5, 233, 200);
+	Action_write(6, 502, 200);
+	Action_write(7, 495, 200);
 	Action_write(8, 860, 200);
 	Action_write(9, 241, 200);
+	Action_write(10, 503, 200);
+	Action();
+	delay_ms(1000);
+	//9.将手放下去
+	Action_write(3, 533, 300);
+	Action_write(4, 722, 300);
+	Action_write(5, 495, 300);
+	Action_write(6, 307, 300);
 	Action();
 	delay_ms(1000);
 	//8.下腰，腿与腰垂直
@@ -1290,104 +1301,99 @@ void zibian3()
 
 }
 //单臂倒立
-void zibian()//
+void zibian0()//
 {
-	//yubei
-	Action_write(1, 492, 300);
-	Action_write(2, 479, 300);
-	Action_write(3, 685, 300);
-	Action_write(4, 901, 300);
-	Action_write(5, 569, 300);
-	Action_write(6, 519, 300);
-	Action_write(7, 549, 400);
-	Action_write(8, 765, 300);
-	Action_write(9, 135, 300);
-	Action_write(10, 402, 300);
+	//预备
+	Action_write(1, 488, 300);
+	Action_write(2, 491, 300);
+	Action_write(3, 618, 300);
+	Action_write(4, 690, 300);
+	Action_write(5, 482, 300);
+	Action_write(6, 337, 300);
+	Action_write(7, 548, 400);
+	Action_write(8, 865, 300);
+	Action_write(9, 173, 300);
+	Action_write(10, 349, 300);
 	Action();
 	delay_ms(1000);
 	//侧着站
-	Action_write(1, 492, 300);
-	Action_write(2, 479, 300);
-	Action_write(5, 538, 300);
-	Action_write(6, 286, 300);
-	Action_write(7, 496, 400);
-	Action_write(8, 762, 300);
-	Action_write(9, 420, 300);
-	Action_write(10, 430, 300);
+ 	Action_write(5,487,300);
+  	Action_write(6,281,300);
+	Action_write(7,509,400);
+	Action_write(8,859,300);
+	Action_write(9,359,300);
+	Action_write(10,355,300);
 	Action();
 	delay_ms(1000);
 	delay_ms(200);
 	//手撑地
 	Action_write(1, 492, 300);
-	Action_write(2, 479, 300);
-	Action_write(3, 601, 300);
-	Action_write(4, 719, 300);
-	Action_write(5, 289, 300);
-	Action_write(6, 259, 300);
-	Action_write(9, 583, 300);
-	Action_write(10, 452, 300);
+	Action_write(2, 489, 300);
+	Action_write(3, 612, 300);
+	Action_write(4, 661, 300);
+	Action_write(5, 303, 300);
+	Action_write(6, 148, 300);
+	Action_write(9, 713, 300);
+	Action_write(10, 511, 300);
 	Action();
 	delay_ms(1000);
 	delay_ms(200);
 	//翻滚
-	Action_write(1, 492, 300);
-	Action_write(2, 479, 300);
-	Action_write(8, 500, 500);
-	Action_write(10, 700, 600);
-	Action_write(3, 582, 75);
-	Action_write(4, 691, 75);
-	Action_write(5, 240, 200);
-	Action_write(6, 138, 200);
+	Action_write(7,505,700);
+	Action_write(8,359,900);
+	Action_write(9,690,950);	
+	Action_write(10,784,950);
 	Action();
 	delay_ms(1000);
-	delay_ms(200);
 	//劈叉
-	Action_write(7, 503, 300);
-	Action_write(10, 500, 300);
-	Action_write(8, 503, 300);
-	Action_write(9, 502, 300);
+	Action_write(7, 179, 300);
+	Action_write(8, 536, 300);
+	Action_write(9, 551, 300);
+	Action_write(10, 816, 300);
 	Action();
 	delay_ms(1000);
-	delay_ms(200);
+
 	//下半身 挺直
-	Action_write(2, 488, 300);
-	Action_write(7, 501, 300);
-	Action_write(8, 789, 300);
-	Action_write(9, 183, 300);
-	Action_write(10, 500, 300);
+	Action_write(7, 497, 300);
+	Action_write(8, 858, 300);
+	Action_write(9, 246, 300);
+	Action_write(10, 509, 300);
 	Action();
-	delay_ms(1000);
-	delay_ms(200);
+	delay_ms(800);
+
 	//单臂倒立开始
-	Action_write(2, 488, 300);
-	Action_write(5, 265, 300);
-	Action_write(6, 130, 300);
-	Action_write(3, 500, 100);
-	Action_write(4, 500, 100);
+	Action_write(2, 491, 300);
+	Action_write(3, 565, 300);
+	Action_write(4, 555, 300);
+	Action_write(5, 303, 100);
+	Action_write(6, 148, 100);
 	Action();
-	delay_ms(1000);
-	delay_ms(200);
+	delay_ms(600);
+
 	//单臂倒立动作0
-	Action_write(7, 202, 300);
-	Action_write(10, 202, 300);
-	Action_write(4, 202, 300);
+	Action_write(3, 420, 300);
+	Action_write(4, 448, 300);
+	Action_write(7, 260, 300);
+	Action_write(10, 317, 300);
 	Action();
-	delay_ms(1000);
-	delay_ms(200);
+	delay_ms(800);
+
 	//单臂倒立动作1
-	Action_write(7, 803, 300);
-	Action_write(10, 803, 300);
-	Action_write(4, 500, 300);
+	Action_write(3, 598, 300);
+	Action_write(4, 459, 300);
+	Action_write(7, 714, 300);
+	Action_write(10, 651, 300);
 	Action();
-	delay_ms(1000);
-	delay_ms(200);
+	delay_ms(800);
+
 	//单臂倒立动作0
-	Action_write(7, 202, 300);
-	Action_write(10, 202, 300);
-	Action_write(4, 202, 300);
+	Action_write(3, 420, 300);
+	Action_write(4, 448, 300);
+	Action_write(7, 260, 300);
+	Action_write(10, 317, 300);
 	Action();
-	delay_ms(1000);
-	delay_ms(200);
+	delay_ms(800);
+
 
 	/*                                                                        
 	Action_write(7,803,300);
@@ -1397,66 +1403,64 @@ void zibian()//
 	delay_ms(1000);
 	delay_ms(200);*/
 	//单臂倒立动作
-	Action_write(7, 500, 300);
-	Action_write(10, 500, 300);
-	Action_write(3, 582, 75);
-	Action_write(4, 691, 75);
+	Action_write(3, 598, 300);
+	Action_write(4, 459, 300);
+	Action_write(7, 497, 300);
+	Action_write(8, 858, 300);
+	Action_write(9, 246, 300);
+	Action_write(10, 509, 300);
 	Action();
 	delay_ms(1000);
-	delay_ms(200);
-	//挥手
-	Action_write(1, 492, 300);
-	Action_write(2, 479, 300);
-	Action_write(3, 601, 300);
-	Action_write(4, 719, 300);
-	Action_write(5, 289, 100);
-	Action_write(6, 259, 100);
-	Action_write(9, 583, 300);
-	Action_write(10, 452, 100);
+
+	//挥手 下脚 准备起立
+	Action_write(1, 503, 200);
+	Action_write(2, 519, 200);
+	Action_write(3, 562, 200);
+	Action_write(4, 499, 200);
+	Action_write(5, 225, 100);
+	Action_write(6, 460, 100);
+	Action_write(9, 679, 300);
+	Action_write(10, 513, 100);
 	Action();
 	delay_ms(1000);
-	delay_ms(200);
+
 	//准备起立
-	Action_write(3, 653, 200);
-	Action_write(4, 824, 300);
-	Action_write(5, 379, 200);
-	Action_write(6, 245, 200);
-	Action_write(8, 420, 300);
-	Action_write(9, 558, 300);
-	Action_write(10, 486, 200);
+	Action_write(3, 562, 200);
+	Action_write(4, 662, 300);
+	Action_write(5, 325, 200);
+	Action_write(6, 257, 200);
+	Action_write(8, 922, 300);
+	Action_write(9, 679, 300);
+	Action_write(10, 513, 200);
 	Action();
 	delay_ms(400);
 	//准备起立
-	Action_write(2, 488, 300);
-	Action_write(3, 619, 200);
-	Action_write(4, 738, 300);
-	Action_write(5, 493, 200);
-	Action_write(6, 298, 200);
-	Action_write(7, 510, 300);
-	Action_write(8, 778, 350);
-	Action_write(9, 516, 250);
-	Action_write(10, 533, 250);
+	Action_write(2, 492, 300);
+	Action_write(3, 574, 200);
+	Action_write(4, 663, 300);
+	Action_write(5, 507, 200);
+	Action_write(6, 409, 200);
+	Action_write(7, 508, 300);
+	Action_write(8, 922, 350);
+	Action_write(9, 596, 250);
+	Action_write(10, 602, 250);
 	Action();
 	delay_ms(1000);
 	delay_ms(200);
-	//站立
-	Action_write(1, 501, 300);
-	Action_write(2, 491, 300);
-	Action_write(3, 354, 300);
-	Action_write(4, 496, 300);
-	Action_write(5, 680, 300);
-	Action_write(6, 572, 300);
-	Action_write(7, 499, 300);
-	Action_write(8, 788, 300);
-	Action_write(9, 190, 200);
-	Action_write(10, 503, 300);
+	//stand
+	Action_write(1, 483, 300);  
+	Action_write(2, 496, 300);  
+	Action_write(3, 392, 300);  
+	Action_write(4, 436, 300);
+	Action_write(5, 663, 300); 
+	Action_write(6, 632, 300); 
+	Action_write(7, 495, 300); 
+	Action_write(8, 851, 300); 
+	Action_write(9, 244, 300);
+	Action_write(10, 506, 300);  
 	Action();
 	delay_ms(1000);
 	delay_ms(500);
 	//	delay_ms(1000);
 
 }
-
-
-
-

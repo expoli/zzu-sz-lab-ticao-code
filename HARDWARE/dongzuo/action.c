@@ -74,7 +74,7 @@ void before_toss()
  {
 	//1.预备2，在这里机器趴下
 	Action_write(1, 180, 600);
-	Action_write(2, 236, 500);
+	Action_write(2, 253, 500);
 	Action_write(3, 414, 300);
 	Action_write(4, 538, 300);
 	Action_write(5, 641, 300);
@@ -248,7 +248,7 @@ void behind_toss() {
 	delay_ms(800);
 
 	//8.下腰，腿与腰垂直
-	Action_write(2, 202, 150);
+	Action_write(2, 229, 150);
 	Action();								
 	delay_ms(1000);
 	delay_ms(800);
@@ -260,8 +260,8 @@ void behind_toss() {
 	delay_ms(1000);
 	delay_ms(500);
 	//10.抬脖子
-	Action_write(1, 150, 300);
-	Action_write(2, 308, 300);
+	Action_write(1, 174, 300);
+	Action_write(2, 230, 300);
 	Action();
 	delay_ms(800);
 	//11.翻脖子站立准备
@@ -763,7 +763,7 @@ void stand_on_head()
 {
 	//1.预备2，在这里机器趴下
 	Action_write(1, 180, 600);
-	Action_write(2, 236, 500);
+	Action_write(2, 253, 500);
 	Action_write(3, 414, 300);
 	Action_write(4, 538, 300);
 	Action_write(5, 641, 300);
@@ -1111,7 +1111,7 @@ void zibian3()
 {
 	//1.预备2，在这里机器趴下
 	Action_write(1, 190, 500);
-	Action_write(2, 236, 400);
+	Action_write(2, 253, 400);
 	Action_write(3, 414, 300);
 	Action_write(4, 538, 300);
 	Action_write(5, 641, 300);
@@ -1244,7 +1244,7 @@ void zibian3()
 	Action();
 	delay_ms(1000);
 	//8.下腰，腿与腰垂直
-	Action_write(2, 202, 150);
+	Action_write(2, 229, 150);
 	Action();								
 	delay_ms(1000);
 	delay_ms(800);
@@ -1254,8 +1254,8 @@ void zibian3()
 	delay_ms(1000);
 	delay_ms(500);
 	//10.抬脖子
-	Action_write(1, 150, 300);
-	Action_write(2, 308, 300);
+	Action_write(1, 174, 300);
+	Action_write(2, 347, 300);
 	Action();								
 	delay_ms(800);
 	//11.翻脖子站立准备

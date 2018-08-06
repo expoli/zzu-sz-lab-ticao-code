@@ -74,7 +74,7 @@ void before_toss()
  {
 	//1.预备2，在这里机器趴下
 	Action_write(1, 180, 600);
-	Action_write(2, 246, 500);
+	Action_write(2, 279, 500);
 	Action_write(3, 414, 300);
 	Action_write(4, 538, 300);
 	Action_write(5, 641, 300);
@@ -87,20 +87,20 @@ void before_toss()
 	delay_ms(1000);
 
 	//翻手
-	Action_write(3, 553, 300);
-	Action_write(4, 738, 300);
-	Action_write(5, 489, 300);
-	Action_write(6, 313, 300);
+	Action_write(3, 553, 200);
+	Action_write(4, 738, 200);
+	Action_write(5, 489, 200);
+	Action_write(6, 313, 200);
 	Action();
 	delay_ms(100);
 
 	//翻勃子
 	Action_write(1, 657, 300);
 	Action_write(2, 126, 200);
-	Action_write(3, 547, 300);
-	Action_write(4, 741, 300);
-	Action_write(5, 517, 300);
-	Action_write(6, 307, 300);
+	Action_write(3, 616, 300);
+	Action_write(4, 664, 300);
+	Action_write(5, 454, 300);
+	Action_write(6, 372, 300);
 	Action();
 	delay_ms(1000);
 	delay_ms(1000);
@@ -777,19 +777,19 @@ void stand_on_head()
 	Action();
 	delay_ms(1000);
 	//翻手
-	Action_write(3, 553, 300);
-	Action_write(4, 738, 300);
-	Action_write(5, 489, 300);
-	Action_write(6, 313, 300);
+	Action_write(3, 553, 200);
+	Action_write(4, 738, 200);
+	Action_write(5, 489, 200);
+	Action_write(6, 313, 200);
 	Action();
 	delay_ms(100);
 	//翻勃子
 	Action_write(1, 657, 300);
 	Action_write(2, 126, 200);
-	Action_write(3, 547, 300);
-	Action_write(4, 741, 300);
-	Action_write(5, 517, 300);
-	Action_write(6, 307, 300);
+	Action_write(3, 616, 300);
+	Action_write(4, 664, 300);
+	Action_write(5, 454, 300);
+	Action_write(6, 372, 300);
 	Action();
 	delay_ms(1000);
 	delay_ms(1000);

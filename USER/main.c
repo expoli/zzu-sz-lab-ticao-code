@@ -65,78 +65,7 @@ void LED0_Toggle(void)
 		}
 }
 /******************************************************************************/
-int main(void)
-{
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//分组2
-	GPIO_Configuration();
-	uart_init(115200);  //串口1
-	adc_DMA_Init();  //Adc_Init();
-	delay_init();
-	delay_s(0x3fffff);
-	TIM2_Init();  //10ms定时
-	printf("Init OK!!!\r\n");
-	
-	OLED_Init(); //OLED初始化
-	OLED_Fill(0xff); //
-	delay_s(0x1fffff);
-	OLED_Fill(0x00); //屏全灭
-	delay_s(0xfffff);
-	OLED_ShowCN(0,0,0);
-	OLED_ShowCN(16,0,1);
-	OLED_ShowCN(32,0,2);
-	OLED_ShowCN(48,0,3);
-	OLED_ShowCN(64,0,4);
-	OLED_ShowCN(80,0,5);
-	OLED_ShowCN(96,0,6);
-	OLED_ShowCN(112,0,7);
-	
-	Stm32_Clock_Init(9); //系统时钟设置
-	delay_init();	     //延时初始化 
-	uart_init(115200);	 //串口初始化为9600
-	
-	while(1)
-	{
-		if(timer_cntr>=50)  //0.5S
-			{
-				timer_cntr=0;
-				LED0_Toggle();
-				//adc_disp();
-				adc_deal();
-			}
-		stand();
-		delay_ms(1000);
-		stand();
-		delay_ms(1000);
-		
-		left_turn();//完成
-		left_turn();//完成
-		//left_turn();//完成
 
-		bow();		//ok
-		wave();		//ok
-		stand();
-		delay_ms(1000);
-
-		before_toss();
-		behind_toss();//over
-		push_up();
-		left_turn();//完成
-		right_turn();
-		stand_on_head();	
-
-		//zibian();
-		//zibian1();
-		zibian3();
-		zibian0();
-		zibian2();
-		bow();
-		wave();
-		delay_ms(5000);
-		stand();
-		delay_ms(5000);
-		delay_ms(5000);
-	}
-}
 /******************************************************************************/
 void adc_deal(void)
 {
@@ -205,3 +134,83 @@ void adc_disp(void)
 /******************************************************************************/
 /******************************************************************************/
 
+int main(void)
+{
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//分组2
+	GPIO_Configuration();
+	uart_init(115200);  //串口1
+	adc_DMA_Init();  //Adc_Init();
+	delay_init();
+	delay_s(0x3fffff);
+	TIM2_Init();  //10ms定时
+	printf("Init OK!!!\r\n");
+	
+	OLED_Init(); //OLED初始化
+	OLED_Fill(0xff); //
+	delay_s(0x1fffff);
+	OLED_Fill(0x00); //屏全灭
+	delay_s(0xfffff);
+	OLED_ShowCN(0,0,0);
+	OLED_ShowCN(16,0,1);
+	OLED_ShowCN(32,0,2);
+	OLED_ShowCN(48,0,3);
+	OLED_ShowCN(64,0,4);
+	OLED_ShowCN(80,0,5);
+	OLED_ShowCN(96,0,6);
+	OLED_ShowCN(112,0,7);
+	
+	Stm32_Clock_Init(9); //系统时钟设置
+	delay_init();	     //延时初始化 
+	uart_init(115200);	 //串口初始化为9600
+	
+	while(1)
+	{
+		if(timer_cntr>=50)  //0.5S
+		{
+			timer_cntr=0;
+			LED0_Toggle();
+			//adc_disp();
+			adc_deal();
+		}
+
+		stand();
+		delay_ms(1000);
+		stand();
+		delay_ms(1000);
+		
+		/*left_turn();//完成
+		left_turn();//完成
+		//left_turn();//完成
+
+		bow();		//ok
+		wave();		//ok
+		stand();
+		delay_ms(1000);*/
+
+		before_toss();
+		/*behind_toss();//over
+		push_up();
+		left_turn();//完成
+		right_turn();
+		stand_on_head();	
+
+		//zibian();
+		//zibian1();
+		zibian3();
+		zibian0();
+		zibian2();*/
+		bow();
+		wave();
+		delay_ms(5000);
+		stand();
+		delay_ms(5000);
+		delay_ms(5000);
+		while(1)
+		{
+			stand();
+			delay_ms(5000);
+			delay_ms(5000);
+		}
+	}
+	return 0;
+}

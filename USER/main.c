@@ -178,17 +178,17 @@ int main(void)
 		stand();
 		delay_ms(1000);
 		
-		/*left_turn();//完成
+		left_turn();//完成
 		left_turn();//完成
 		//left_turn();//完成
 
 		bow();		//ok
 		wave();		//ok
 		stand();
-		delay_ms(1000);*/
+		delay_ms(1000);
 
 		before_toss();
-		/*behind_toss();//over
+		behind_toss();//over
 		push_up();
 		left_turn();//完成
 		right_turn();
@@ -198,9 +198,10 @@ int main(void)
 		//zibian1();
 		zibian3();
 		zibian0();
-		zibian2();*/
+		zibian2();
 		bow();
 		wave();
+		
 		delay_ms(5000);
 		stand();
 		delay_ms(5000);

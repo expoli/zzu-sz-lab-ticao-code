@@ -198,7 +198,7 @@ int main(void)
 		//zibian1();
 		zibian3();
 		zibian0();
-		zibian2();
+		//zibian2();
 		bow();
 		wave();
 		

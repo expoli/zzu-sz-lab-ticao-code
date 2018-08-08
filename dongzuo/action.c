@@ -63,7 +63,7 @@ void wave()
     //复位
 	Action_write(3, 392, 300);
 	Action_write(4, 436, 450);
-	Action();
+	Action();	
 	delay_ms(1000);
 	delay_ms(1000);
 	delay_ms(1000);
@@ -189,14 +189,10 @@ void before_toss()
 	Action();
 	delay_ms(1000);
 	delay_ms(500);
-
-
-
 }
 //后翻
-void behind_toss() {
-
-
+void behind_toss() 
+{
 	//1,后仰	、1，2速度快了就恶意下去
 	Action_write(1, 863, 650);	
 	Action_write(2, 756, 655);
@@ -211,7 +207,6 @@ void behind_toss() {
 	Action();
 	delay_ms(1000);
 	delay_ms(250);
-
 	//翻手
 	Action_write(1, 325, 300);		
 	Action_write(2, 853, 300);
@@ -233,7 +228,6 @@ void behind_toss() {
 	Action_write(10, 744, 850);
 	Action();
 	delay_ms(1000);
-
 	//5.大劈叉预备
 	Action_write(10, 502, 300);
 	Action_write(8, 538, 300);
@@ -246,14 +240,11 @@ void behind_toss() {
 	Action_write(9, 243, 300);
 	Action();
 	delay_ms(800);
-
 	//8.下腰，腿与腰垂直
 	Action_write(2, 229, 150);
 	Action();								
 	delay_ms(1000);
 	delay_ms(800);
-
-
 	//9.下脖子，准备站立减7
 	Action_write(1, 704, 75);
 	Action();								
@@ -271,7 +262,6 @@ void behind_toss() {
 	Action_write(6, 532, 300);
 	Action();
 	delay_ms(800);
-
 	//12.抬身子，尝试站立
 	Action_write(1, 257, 300);
 	Action_write(2, 338, 300);
@@ -281,7 +271,6 @@ void behind_toss() {
 	Action_write(6, 536, 300);
 	Action();
 	delay_ms(1000);
-
 	//立正预备，腰收回
 	Action_write(1, 239, 300);
 	Action_write(2, 228, 300);
@@ -306,7 +295,6 @@ void behind_toss() {
 	delay_ms(1000);
 	delay_ms(1000);
 	delay_ms(1000);
-
 }
 //俯卧撑
 void push_up()
@@ -348,8 +336,6 @@ void push_up()
 	//***********************************************
 	//leftpushup
 	//***********************************************
-
-
 	//3. 3，4回收预备
 	Action_write(3, 408, 350);
 	Action_write(4, 274, 400);	
@@ -362,13 +348,11 @@ void push_up()
 	Action_write(4, 539, 400);	
 	Action();
 	delay_ms(500);
-
 	//6.另一只手上去
 	Action_write(3, 822, 350);
 	Action_write(4, 809, 400);	
 	Action();
 	delay_ms(800);//1000
-
 	//7.单手支撑预备2，下去
 	Action_write(1, 240, 250);
 	Action_write(2, 512, 500);
@@ -390,7 +374,6 @@ void push_up()
 	Action_write(6, 831, 400);
 	Action();
 	delay_ms(800);
-
 	 //10.单手支撑预备finally，准备站立
 	Action_write(1, 300, 300);
 	Action_write(2, 512, 500);
@@ -399,20 +382,16 @@ void push_up()
 	Action();
 	delay_ms(800);
 	delay_ms(100);
-
 	//11.  3，4水平
 	Action_write(3, 563, 350);
 	Action_write(4, 274, 400);
 	Action();
 	delay_ms(800);
-
 	//12. 3，4回收预备
 	Action_write(3, 408, 350);
 	Action_write(4, 274, 400);
 	Action();
 	delay_ms(500);
-
-
 
 	Action_write(1, 300, 300);
 	Action_write(3, 307, 350);
@@ -434,7 +413,6 @@ void push_up()
 	Action_write(6, 500, 200);			
 	Action();
 	delay_ms(800);
-
 	//5另一只手上去
 	Action_write(5, 226, 350);
 	Action_write(6, 178, 400);	
@@ -473,13 +451,11 @@ void push_up()
 	Action_write(6, 739, 400);		
 	Action();
 	delay_ms(800);
-
 	//11.3， 5，6回收，准备抬起，防止直接抬起蹭地
 	Action_write(5, 679, 300);
 	Action_write(6, 739, 400);
 	Action();
 	delay_ms(800);
-
 	//为了矫正。。。成功
 	Action_write(5, 741, 200);
 	Action_write(6, 622, 200);
@@ -508,7 +484,6 @@ void push_up()
 	Action_write(6, 824, 330);
 	Action_write(1, 238, 100);
 	Action_write(2, 493, 500);
-
 	//腿立正
 	Action_write(7, 495, 300);
 	Action_write(8, 851, 300);
@@ -516,7 +491,6 @@ void push_up()
 	Action_write(10, 506, 300);
 	Action();
 	delay_ms(800);
-
 	//手夹紧
 	Action_write(1, 301, 100);
 	Action_write(2, 462, 400);
@@ -527,7 +501,6 @@ void push_up()
 	Action();
 	delay_ms(800);
 	delay_ms(200);
-
 	//俯卧撑，2，下去，，，，，first time
 	Action_write(3, 574, 400);
 	Action_write(4, 220, 330);
@@ -535,7 +508,6 @@ void push_up()
 	Action_write(6, 824, 330);
 	Action_write(1, 238, 100);			
 	Action_write(2, 493, 500);
-
 	//腿立正
 	Action_write(7, 495, 300);
 	Action_write(8, 851, 300);
@@ -553,7 +525,6 @@ void push_up()
 	Action();
 	delay_ms(800);
 	delay_ms(200);
-
 	//立正预备1，双手打开。。。。来自 push up
 	Action_write(3, 410, 300);
 	Action_write(4, 452, 300);
@@ -570,7 +541,6 @@ void push_up()
 	Action_write(6, 540, 300);
 	Action();
 	delay_ms(800);
-
 	//立正
 	Action_write(1, 483, 300);  
 	Action_write(2, 496, 300);  
@@ -582,7 +552,6 @@ void push_up()
 	delay_ms(1000);
 	delay_ms(1000);
 	delay_ms(1000);
-
 }
 //左滚翻
 void left_turn()
